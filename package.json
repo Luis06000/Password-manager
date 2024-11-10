@@ -1,8 +1,8 @@
 {
-  "homepage": "https://luis06000.github.io/password-manager",
   "name": "password-manager",
+  "homepage": "https://luis06000.github.io/Password-manager",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "start": "react-scripts start",
