@@ -134,7 +134,10 @@ function PasswordGenerator() {
                 value={options.length}
                 min="4"
                 max="50"
-                onChange={(e) => setOptions({...options, length: parseInt(e.target.value)})}
+                onChange={(e) => {
+                  const value = Math.min(50, parseInt(e.target.value));
+                  setOptions({...options, length: value});
+                }}
               />
             </div>
 

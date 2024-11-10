@@ -19,11 +19,11 @@
 .container {
   max-width: 800px;
   width: 90%;
-  min-height: 550px;
-  max-height: 550px;
+  min-height: 82vh;
+  max-height: 82vh;
   height: 90%;
-  margin: 2rem;
-  padding: 2rem;
+  margin: 1rem;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   border: 1px solid rgba(0, 255, 0, 0.3);
@@ -31,6 +31,44 @@
   backdrop-filter: blur(6px);
   z-index: 1;
   color: #fff;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+  }
+
+  .tabs {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tab {
+    padding: 0.6rem;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 98%;
+    min-height: 76vh;
+    max-height: 76vh;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
 }
 
 h1 {

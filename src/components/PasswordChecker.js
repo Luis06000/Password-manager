@@ -27,27 +27,40 @@ function PasswordChecker() {
       newFeedback.push("Password must be at least 8 characters long");
     }
 
-    if (!/[A-Z]/.test(password)) newFeedback.push("Add uppercase letters");
-    else score += 1;
+    if (!/[A-Z]/.test(password)) {
+      newFeedback.push("Add uppercase letters");
+    } else {
+      score += 1;
+    }
 
-    if (!/[a-z]/.test(password)) newFeedback.push("Add lowercase letters");
-    else score += 1;
+    if (!/[a-z]/.test(password)) {
+      newFeedback.push("Add lowercase letters");
+    } else {
+      score += 1;
+    }
 
-    if (!/[0-9]/.test(password)) newFeedback.push("Add numbers");
-    else score += 1;
+    if (!/[0-9]/.test(password)) {
+      newFeedback.push("Add numbers");
+    } else {
+      score += 1;
+    }
 
-    if (!/[^a-zA-Z0-9]/.test(password)) newFeedback.push("Add special characters");
-    else score += 1;
+    if (!/[^a-zA-Z0-9]/.test(password)) {
+      newFeedback.push("Add special characters");
+    } else {
+      score += 1;
+    }
 
     const strengthLevels = {
       1: { text: 'Very Weak', color: '#FF0000' },
       2: { text: 'Weak', color: '#FF6600' },
       3: { text: 'Medium', color: '#FFCC00' },
       4: { text: 'Strong', color: '#99FF00' },
-      5: { text: 'Very Strong', color: '#00FF00' }
+      5: { text: 'Very Strong', color: '#00FF00' },
+      6: { text: 'Very Strong', color: '#00FF00' }
     };
 
-    setStrength(strengthLevels[score] || strengthLevels[1]);
+    setStrength(strengthLevels[score] || strengthLevels[0]);
     setFeedback(newFeedback);
   };
 
