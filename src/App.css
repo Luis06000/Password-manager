@@ -55,11 +55,13 @@ h1 {
   color: #0F0;
   cursor: pointer;
   transition: all 0.3s ease;
+  border-radius: 12px;
 }
 
 .tab.active {
   background: rgba(0, 255, 0, 0.2);
   border-color: rgba(0, 255, 0, 0.5);
+  border-radius: 12px;
 }
 
 .generator-section,
@@ -147,10 +149,15 @@ button:hover {
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 255, 0, 0.3);
   color: #0F0;
-  border-radius: 4px;
+  border-radius: 12px;
+}
+
+.password-input-container input:focus {
+  border: 1px solid rgba(0, 255, 0, 0.3);
 }
 
 .toggle-password {
   width: auto;
   padding: 0.8rem;
+  border-radius: 12px;
 }

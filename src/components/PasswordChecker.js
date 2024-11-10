@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import '../styles/PasswordChecker.css';
 
 function PasswordChecker() {
   const [password, setPassword] = useState('');
   const [strength, setStrength] = useState(null);
   const [feedback, setFeedback] = useState([]);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
 
   const checkPassword = () => {
+    if (!password.trim()) {
+      setError('Please enter a password');
+      setTimeout(() => setError(''), 2000);
+      return;
+    }
+
     let score = 0;
     const newFeedback = [];
 
@@ -45,6 +53,11 @@ function PasswordChecker() {
 
   return (
     <div className="checker-section">
+      {error && (
+        <div className="error-message">
+          {error}
+        </div>
+      )}
       <div className="password-input-container">
         <input
           type={showPassword ? 'text' : 'password'}

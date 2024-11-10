@@ -99,7 +99,7 @@ function PasswordGenerator() {
       // Si c'est la dernière option cochée
       if (currentlyChecked === 1) {
         setError('At least one option must be selected');
-        setTimeout(() => setError(''), 2000); // Le message disparaît après 3 secondes
+        setTimeout(() => setError(''), 3000); // Le message disparaît après 3 secondes
         return; // On sort de la fonction sans modifier l'état
       }
     }
@@ -111,6 +111,12 @@ function PasswordGenerator() {
 
   return (
     <div className="generator-section">
+      {error && (
+        <div className="error-message">
+          {error}
+        </div>
+      )}
+
       <div className="options-wrapper">
         <div className={`options-toggle ${showOptions ? 'active' : ''}`} 
              onClick={() => setShowOptions(!showOptions)}>
@@ -119,12 +125,6 @@ function PasswordGenerator() {
         
         {showOptions && (
           <div className="options-container">
-            {error && (
-              <div className="error-message">
-                {error}
-              </div>
-            )}
-            
             <div className="form-group">
               <label htmlFor="length">Length:</label>
               <input
@@ -191,12 +191,6 @@ function PasswordGenerator() {
       <div className={`copy-message ${showCopyMessage ? 'show' : ''}`}>
         Password copied to clipboard!
       </div>
-
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
     </div>
   );
 }
