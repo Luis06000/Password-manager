@@ -135,7 +135,12 @@ function PasswordGenerator() {
                 min="4"
                 max="50"
                 onChange={(e) => {
-                  const value = Math.min(50, parseInt(e.target.value));
+                  const value = e.target.value === '' ? '' : 
+                    isNaN(parseInt(e.target.value)) ? options.length : e.target.value;
+                  setOptions({...options, length: value});
+                }}
+                onBlur={(e) => {
+                  const value = e.target.value === '' ? 4 : Math.min(50, Math.max(4, parseInt(e.target.value) || 4));
                   setOptions({...options, length: value});
                 }}
               />
