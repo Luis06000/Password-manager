@@ -32,6 +32,13 @@
   z-index: 1;
   color: #fff;
   overflow-y: auto;
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;     /* Firefox */
+  overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari et Opera */
 }
 
 @media (max-width: 768px) {
