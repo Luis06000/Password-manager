@@ -128,7 +128,7 @@ function PasswordGenerator() {
             <div className="form-group">
               <label htmlFor="length">Length:</label>
               <input
-                type="number"
+                type="tel"
                 id="length"
                 name="length"
                 value={options.length}
